@@ -16,3 +16,4 @@ Install via npm:
 npm install simple-scheduler
 ```
 # simpleScheduler
+# simpleScheduler
