@@ -1,11 +1,10 @@
 // simpleScheduler.js
-
 /**
  * Schedules tasks at given intervals using human-friendly syntax.
  *
  * @param {Function} task - The function to execute at specified intervals.
  * @param {string} interval - The time interval (e.g., '5 seconds', '2 minutes').
- * @returns {NodeJS.Timeout} - Returns the timer ID for further control if needed.
+ * @returns {NodeJS.Timeout | undefined} - Returns the timer ID for further control if needed or undefined if invalid interval.
  */
 function scheduleTask(task, interval) {
   const milliseconds = parseInterval(interval);
@@ -14,6 +13,25 @@ function scheduleTask(task, interval) {
     return timerId; // Return the timer ID for possible cancellation
   } else {
     console.error("Invalid interval specified. Task not scheduled.");
+    return undefined;
+  }
+}
+
+/**
+ * Schedules a task to run once after a specified interval using human-friendly syntax.
+ *
+ * @param {Function} task - The function to execute once after the specified interval.
+ * @param {string} interval - The time interval (e.g., '5 seconds', '2 minutes').
+ * @returns {NodeJS.Timeout | undefined} - Returns the timer ID for possible cancellation or undefined if invalid interval.
+ */
+function scheduleOnce(task, interval) {
+  const milliseconds = parseInterval(interval);
+  if (milliseconds > 0) {
+    const timerId = setTimeout(task, milliseconds);
+    return timerId; // Return the timer ID for possible cancellation
+  } else {
+    console.error("Invalid interval specified. Task not scheduled.");
+    return undefined;
   }
 }
 
@@ -40,14 +58,25 @@ function parseInterval(interval) {
 /**
  * Clears all scheduled tasks based on the provided array of timer IDs.
  *
- * @param {Array} tasks - An array of timer IDs to clear.
+ * @param {Array<NodeJS.Timeout>} tasks - An array of timer IDs to clear.
  */
 function clearTasks(tasks) {
   tasks.forEach(clearInterval);
 }
 
+/**
+ * Cancels a scheduled task based on its timer ID.
+ *
+ * @param {NodeJS.Timeout} timerId - The timer ID to cancel.
+ */
+function cancelTask(timerId) {
+  clearInterval(timerId);
+}
+
 module.exports = {
   scheduleTask,
+  scheduleOnce,
   parseInterval,
   clearTasks,
+  cancelTask,
 };
