@@ -1,0 +1,27 @@
+{
+  "name": "task-scheduler",
+  "version": "1.0.0",
+  "description": "A lightweight task scheduler for Node.js",
+  "main": "TaskScheduler.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rehmanmusharaf/Task-Scheduler"
+  },
+  "keywords": [
+    "task-scheduler",
+    "scheduler",
+    "task",
+    "cron",
+    "lightweight",
+    "simple"
+  ],
+  "author": "Muhammad Rehman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rehmanmusharaf/Task-Scheduler/issues"
+  },
+  "homepage": "https://github.com/rehmanmusharaf/Task-Scheduler"
+}
