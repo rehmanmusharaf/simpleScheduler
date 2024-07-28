@@ -15,3 +15,4 @@ Install via npm:
 ```bash
 npm install simple-scheduler
 ```
+# simpleScheduler
