@@ -1,14 +1,15 @@
 {
-  "name": "task-scheduler",
-  "version": "1.0.0",
-  "description": "A lightweight task scheduler for Node.js",
-  "main": "TaskScheduler.js",
+  "name": "@rehmanmusharaf/simplescheduler",
+  "version": "1.0.2",
+  "description": "A simple task scheduler for JavaScript",
+  "main": "simpleScheduler.js",
   "scripts": {
-    "test": "node test.js"
+    "start": "node simpleScheduler.js",
+    "test": "node simpleScheduler.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rehmanmusharaf/Task-Scheduler"
+    "url": "git+https://github.com/rehmanmusharaf/simpleScheduler.git"
   },
   "keywords": [
     "task-scheduler",
@@ -21,7 +22,11 @@
   "author": "Muhammad Rehman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rehmanmusharaf/Task-Scheduler/issues"
+    "url": "https://github.com/rehmanmusharaf/simpleScheduler/issues"
   },
-  "homepage": "https://github.com/rehmanmusharaf/Task-Scheduler"
+  "homepage": "https://github.com/rehmanmusharaf/simpleScheduler#readme",
+  "files": [
+    "simpleScheduler.js",
+    "README.md"
+  ]
 }

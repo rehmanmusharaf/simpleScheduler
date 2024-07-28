@@ -1,4 +1,4 @@
-const { scheduleTask, clearTasks, scheduleOnce } = require("./taskScheduler");
+const { scheduleTask, clearTasks, scheduleOnce } = require("./simpleScheduler");
 // Test scheduling a task every 3 seconds
 const taskId2 = scheduleOnce(() => {
   console.log("Task executed 1 Time!");
